@@ -17,11 +17,6 @@ export default function Home({ data }: Props) {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   const uid = context.params?.uid;
-  if (!uid) {
-    return {
-      notFound: true,
-    };
-  }
 
   const data = await client.getByUID<CatalogueDocument>(
     "catalogue",
